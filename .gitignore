@@ -1,0 +1,9 @@
+# Solo se versiona y publica lo que usa el deck.
+# Originales, referentes y notas de trabajo quedan en local.
+source/
+outline.md
+media/*.png
+media/videos/*.mp4
+media/wave.svg
+.DS_Store
+Thumbs.db

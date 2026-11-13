@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Deck · Universidades — estilos locales (no forman parte del sistema)
+   Solo tokens var(--ap-…). Prefijo .dk-
+   ========================================================================== */
+
+/* Iconos de línea (sprite local) */
+.dk-ico { width: 32px; height: 32px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.dk-ico--sm { width: 24px; height: 24px; }
+
+/* ---------- s4 · Escenarios "¿Qué pasa cuando…?" ---------- */
+.dk-scenarios { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: var(--ap-slide-gutter); }
+.dk-scenarios .ap-card { display: flex; flex-direction: column; gap: 16px; padding: 36px 36px 32px; background: var(--ap-color-gray-50); border-color: var(--ap-color-gray-200); }
+.dk-scenarios .ap-h4 { color: var(--ap-fg-brand); }
+.dk-scenarios .ap-lead { color: var(--ap-fg-primary); }
+
+/* ---------- s5 · Desafíos con cifra ---------- */
+.dk-challenge { display: flex; flex-direction: column; }
+.dk-challenge .ap-h4 { min-height: 2.4em; }
+.dk-challenge .ap-body { margin-top: 16px; }
+.dk-challenge .ap-kpi-card { margin-top: auto; align-items: stretch; }
+.dk-challenge .ap-kpi-card__box { text-align: left; padding: 24px 24px 22px; }
+.dk-challenge .ap-kpi { font-size: var(--ap-f-8xl); letter-spacing: var(--ap-tracking-tight); }
+.dk-challenge .ap-kpi-card__desc { font-weight: var(--ap-weight-medium); font-size: var(--ap-f-base); line-height: 1.35; }
+
+/* ---------- s7 · Quiénes somos ---------- */
+.dk-pillar .ap-h4 { color: var(--ap-color-secondary); }
+.dk-pillar .ap-body { margin-top: 10px; color: var(--ap-color-gray-300); }
+.dk-logos { grid-template-columns: repeat(4, 1fr); column-gap: var(--ap-slide-gutter); }
+.dk-logos > * { height: 150px; }
+.dk-logos > *:nth-last-child(-n+3) { border-bottom: 1px solid var(--ap-slide-rule); }
+.dk-logos > *:nth-last-child(-n+4) { border-bottom: 0; }
+.dk-logos img { max-width: 78%; max-height: 92px; }
+
+/* ---------- s8 / s13 · Fases con flecha ---------- */
+.dk-phases .ap-phase { position: relative; }
+.dk-phases .ap-phase p { max-width: 30ch; }
+.dk-phases .ap-phase__n { font-size: var(--ap-f-lg); }
+
+/* ---------- s9 · Líneas de servicio ---------- */
+.dk-services { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ap-slide-gutter); }
+.dk-services .ap-card { display: flex; flex-direction: column; padding: 40px; }
+.dk-services .dk-ico { color: var(--ap-fg-brand); width: 40px; height: 40px; }
+.dk-services h3 { margin: 28px 0 16px; font: var(--ap-weight-bold) 28px/1.2 var(--ap-font-sans); color: var(--ap-fg-primary); }
+.dk-services .ap-caption { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--ap-slide-rule); font-size: var(--ap-f-lg); }
+.dk-services .ap-caption b { color: var(--ap-fg-brand); }
+
+/* ---------- s10 · Pasos del caso ---------- */
+.dk-steps { display: flex; flex-direction: column; gap: 12px; }
+.dk-step { display: flex; align-items: center; gap: 20px; padding: 18px 24px; border-radius: var(--ap-radius-component-md); background: var(--ap-color-white); font: var(--ap-weight-regular) var(--ap-f-lg)/1.35 var(--ap-font-sans); color: var(--ap-fg-primary); }
+.dk-step .dk-ico { color: var(--ap-fg-brand); }
+.dk-step--dark { background: var(--ap-color-gray-950); color: var(--ap-color-white); font-weight: var(--ap-weight-semibold); }
+.dk-step--dark .dk-ico { color: var(--ap-color-secondary); }
+
+/* ---------- s11 · Diagrama del ecosistema ---------- */
+.dk-eco { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--ap-slide-gutter); }
+.dk-eco__start { grid-column: 1 / span 3; align-self: center; position: relative; padding: 28px; border: 2px solid var(--ap-color-secondary); border-radius: var(--ap-radius-container-md); }
+.dk-eco__start .ap-mono { font-size: var(--ap-f-base); color: var(--ap-color-secondary); text-transform: uppercase; }
+.dk-eco__start p + p { margin: 12px 0 0; font: var(--ap-weight-bold) 28px/1.2 var(--ap-font-sans); color: var(--ap-color-white); }
+.dk-eco__link { position: absolute; left: 100%; top: 50%; width: calc(var(--ap-slide-gutter) + 2px); height: 2px; background: var(--ap-color-secondary); }
+.dk-eco__grid { grid-column: 4 / span 9; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.dk-eco__grid .ap-card { padding: 24px 28px; background: var(--ap-color-gray-800); border-color: var(--ap-color-gray-700); border-radius: var(--ap-radius-component-md); }
+.dk-eco__grid h4 { margin: 0 0 8px; font: var(--ap-weight-bold) 22px/1.25 var(--ap-font-sans); color: var(--ap-color-white); }
+.dk-eco__grid p { margin: 0; font: var(--ap-weight-regular) var(--ap-f-lg)/1.4 var(--ap-font-sans); color: var(--ap-color-gray-300); }
+.dk-eco__bar { grid-column: 4 / span 9; margin-top: 16px; padding: 18px 28px; border-radius: var(--ap-radius-component-md); background: var(--ap-color-secondary); font: var(--ap-weight-regular) 22px/1.3 var(--ap-font-sans); color: var(--ap-color-gray-950); }
+.ap-slide .dk-eco__bar b { color: var(--ap-color-gray-950); }
+
+/* ---------- s12 · Logros ---------- */
+.dk-achievements { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ap-slide-gutter); }
+.dk-achievements li { display: flex; gap: 14px; align-items: flex-start; font: var(--ap-weight-regular) var(--ap-f-lg)/1.35 var(--ap-font-sans); color: var(--ap-fg-primary); }
+.dk-achievements .dk-ico { color: var(--ap-fg-brand); margin-top: 1px; }
+.dk-case-stats .ap-stat-card__value { font-size: 44px; padding: 8px 0 4px; }
+.dk-case-stats .ap-stat-card__body { font-size: var(--ap-f-lg); justify-content: flex-start; padding: 20px 18px; }
+
+/* ---------- s13 · Primer paso ---------- */
+.dk-offer { display: flex; flex-direction: column; padding: 48px; border-radius: var(--ap-radius-container-md); background: var(--ap-surface-sunken); }
+.dk-offer .ap-label { font-size: var(--ap-f-base); color: var(--ap-fg-brand); }
+.dk-offer h3 { margin: 20px 0 32px; font: var(--ap-weight-bold) 36px/1.2 var(--ap-font-sans); color: var(--ap-fg-primary); }
+.dk-offer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.dk-offer li { display: flex; gap: 16px; align-items: flex-start; font: var(--ap-weight-regular) var(--ap-f-xl)/1.35 var(--ap-font-sans); color: var(--ap-fg-primary); }
+.dk-offer li .dk-ico { color: var(--ap-fg-brand); margin-top: 3px; }
+.dk-offer--dark { background: var(--ap-color-gray-950); }
+.dk-offer--dark .ap-label, .dk-offer--dark li .dk-ico { color: var(--ap-color-secondary); }
+.dk-offer--dark h3, .dk-offer--dark li { color: var(--ap-color-white); }
+.dk-arrow { align-self: center; justify-self: center; width: 56px; height: 56px; color: var(--ap-fg-brand); fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ---------- s14 · Cierre ---------- */
+.dk-closing-title { font-size: var(--ap-f-7xl); font-weight: var(--ap-weight-regular); line-height: var(--ap-lh-snug); }
+.dk-closing-title .hl { font-weight: var(--ap-weight-black); }
+
+/* ---------- Ajustes tras verificación ---------- */
+.dk-logos .dk-logo--lg img { max-height: 124px; max-width: 86%; }
+.dk-challenge .ap-kpi-card__box { min-height: 190px; }
+.dk-phases .ap-phase p { max-width: none; font-size: var(--ap-f-xl); }
+.dk-phases .ap-phase h4 { font-size: var(--ap-f-2xl); }
+.dk-services h3 { font-size: var(--ap-f-2xl); }
+.dk-offer { padding: 56px; }
+
+/* ==========================================================================
+   Ajustes v2 · intro, portada, slide 02 y botón lima
+   ========================================================================== */
+
+/* ---------- Botón lima: hover = fondo transparente + borde inset ---------- */
+.ap-btn.ap-btn--secondary { transition: background var(--ap-dur-sm) var(--ap-ease-out), color var(--ap-dur-sm) var(--ap-ease-out), box-shadow var(--ap-dur-sm) var(--ap-ease-out); }
+.ap-btn.ap-btn--secondary:hover,
+.ap-btn.ap-btn--secondary:focus-visible {
+  --_bg: transparent; --_fg: var(--ap-color-secondary);
+  box-shadow: inset 0 0 0 2px var(--ap-color-secondary);
+}
+.ap-btn.ap-btn--secondary:is(.ap-btn--lg, .ap-btn--xl):is(:hover, :focus-visible) { box-shadow: inset 0 0 0 4px var(--ap-color-secondary); }
+.ap-btn.ap-btn--secondary:active { --_bg: rgb(223 253 104 / .12); }
+
+/* ---------- Mesh gradient más notorio (intro y portada) ---------- */
+.dk-mesh, .ap-intro .ap-intro__mesh { filter: blur(70px); }
+.ap-intro .ap-intro__blob--1, .dk-mesh .ap-intro__blob--1 { background: radial-gradient(circle, rgb(30 101 236 / 1), transparent 62%); --x: 520px; --y: 260px; --d: 14s; }
+.ap-intro .ap-intro__blob--2, .dk-mesh .ap-intro__blob--2 { background: radial-gradient(circle, rgb(32 61 173 / .95), transparent 62%); --x: -560px; --y: -300px; --d: 18s; }
+.ap-intro .ap-intro__blob--3, .dk-mesh .ap-intro__blob--3 { background: radial-gradient(circle, rgb(192 217 253 / .35), transparent 62%); --x: -380px; --y: 420px; --d: 21s; }
+.ap-intro .ap-intro__blob--4, .dk-mesh .ap-intro__blob--4 { width: 760px; height: 760px; background: radial-gradient(circle, rgb(223 253 104 / .28), transparent 62%); --x: 420px; --y: -320px; --d: 12s; }
+
+/* Portada: mesh concentrado a la izquierda (detrás del título), puntos encima */
+.dk-cover { background: var(--ap-color-gray-950); }
+.dk-mesh--cover { inset: -30% 35% -30% -30%; }
+.dk-mesh--cover .ap-intro__blob--2 { right: auto; left: 30%; }
+.dk-mesh--cover .ap-intro__blob--4 { left: 40%; top: 60%; }
+.dk-dots { position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, var(--ap-dots-color) 1.5px, transparent 2px);
+  background-size: var(--ap-dots-size) var(--ap-dots-size); background-position: 1px 1px; }
+
+/* ---------- Intro: instructivo y botones entran uno a uno ---------- */
+.ap-intro .ap-intro__help { animation: none; }
+.ap-intro .ap-intro__help > p,
+.ap-intro .dk-key,
+.ap-intro .ap-intro__keys .sep,
+.ap-intro .ap-intro__actions > .ap-btn { animation: ap-fade-up .7s var(--ap-ease-out) both; }
+.ap-intro .dk-key { display: inline-flex; align-items: center; gap: 12px; }
+.ap-intro .ap-intro__help > p                { animation-delay: 1.9s; }
+.ap-intro .ap-intro__keys > :nth-child(1)    { animation-delay: 2.25s; }
+.ap-intro .ap-intro__keys > :nth-child(2)    { animation-delay: 2.45s; }
+.ap-intro .ap-intro__keys > :nth-child(3)    { animation-delay: 2.55s; }
+.ap-intro .ap-intro__keys > :nth-child(4)    { animation-delay: 2.75s; }
+.ap-intro .ap-intro__keys > :nth-child(5)    { animation-delay: 2.85s; }
+.ap-intro .ap-intro__actions > :nth-child(1) { animation-delay: 3.2s; }
+.ap-intro .ap-intro__actions > :nth-child(2) { animation-delay: 3.45s; }
+@media (prefers-reduced-motion: reduce) { .ap-intro :is(.ap-intro__help > p, .dk-key, .ap-intro__keys .sep, .ap-intro__actions > .ap-btn), .dk-mesh .ap-intro__blob { animation: none; } }
+@media print { .ap-intro :is(.ap-intro__help > p, .dk-key, .ap-intro__keys .sep, .ap-intro__actions > .ap-btn), .dk-mesh .ap-intro__blob { animation: none; } }
+
+/* ---------- Portada: título de peso mixto ---------- */
+.dk-cover-title__brand { color: var(--ap-color-secondary); font-weight: 800; }
+.dk-cover-title__light { color: var(--ap-color-white); font-weight: 300; }
+
+/* ---------- Slide 02: declaración + ilustración ---------- */
+.dk-statement { max-width: 1200px; font-size: var(--ap-f-6xl); font-weight: 300; }
+.dk-illus { position: absolute; inset: 0; pointer-events: none; }
+.dk-illus__rings { position: absolute; left: 1363px; top: 274px; width: 500px; height: 500px; overflow: visible; fill: none; stroke: var(--ap-color-gray-700); stroke-width: 1.5; }
+.dk-illus__rings circle:last-child { stroke: var(--ap-color-gray-800); }
+.dk-illus__flower { position: absolute; left: 1392px; top: 317px; width: 436px; height: auto; transform-origin: 50% 25%; }
+.dk-illus__tags { position: absolute; left: 1340px; top: 168px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 26px; }
+.dk-illus__tags li, .dk-illus__file span { font: var(--ap-weight-regular) 20px/24px var(--ap-font-mono); letter-spacing: .4em; text-transform: uppercase; color: var(--ap-color-gray-400); white-space: pre; min-height: 24px; }
+.dk-illus__tags li:first-child { color: var(--ap-color-white); }
+.dk-illus__line { position: absolute; left: 1340px; top: 322px; width: 267px; height: 1px; background: var(--ap-color-white); transform-origin: 0 50%; }
+.dk-illus__node { position: absolute; width: 14px; height: 14px; border: 1.5px solid var(--ap-color-white); border-radius: 50%; background: var(--ap-color-gray-950); transform: translate(-50%, -50%); }
+.dk-illus__node--line { left: 1613px; top: 322px; }
+.dk-illus__node--file { left: 1450px; top: 740px; border-color: var(--ap-color-gray-500); }
+.dk-illus__file { position: absolute; left: 1300px; top: 740px; width: 150px; height: 150px; border: 1px solid var(--ap-color-gray-700); display: flex; align-items: flex-end; padding: 12px; }
+.dk-illus__file span { font-size: var(--ap-f-base); letter-spacing: .08em; }
+
+/* Movimiento (solo cuando el deck anima: .ap-animate + slide en .is-playing) */
+.ap-animate .ap-slide .dk-illus :is(.dk-illus__flower, .dk-illus__line, .dk-illus__node, .dk-illus__file) { opacity: 0; }
+.ap-animate .ap-slide .dk-illus__rings circle { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ap-animate .ap-slide.is-playing .dk-illus__flower { animation: dk-flower 1400ms var(--ap-ease-out) 700ms both, dk-float 7s ease-in-out 2100ms infinite alternate; }
+.ap-animate .ap-slide.is-playing .dk-illus__rings circle:first-child { animation: dk-ring 1600ms var(--ap-ease-out) 800ms both; }
+.ap-animate .ap-slide.is-playing .dk-illus__rings circle:last-child  { animation: dk-ring 1600ms var(--ap-ease-out) 1000ms both; }
+.ap-animate .ap-slide.is-playing .dk-illus__rings { animation: dk-spin 90s linear 2.4s infinite; transform-origin: 50% 50%; }
+.ap-animate .ap-slide.is-playing .dk-illus__line { animation: ap-draw 700ms var(--ap-ease-out) 1900ms both; }
+.ap-animate .ap-slide.is-playing .dk-illus__node--line { animation: dk-node 400ms var(--ap-ease-out) 2500ms both; }
+.ap-animate .ap-slide.is-playing .dk-illus__file { animation: dk-box 700ms var(--ap-ease-out) 1700ms both; }
+.ap-animate .ap-slide.is-playing .dk-illus__node--file { animation: dk-node 400ms var(--ap-ease-out) 2300ms both; }
+@keyframes dk-flower { from { opacity: 0; translate: 0 60px; filter: blur(14px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
+@keyframes dk-float  { from { rotate: -1deg; } to { rotate: 1deg; } }
+@keyframes dk-ring   { to { stroke-dashoffset: 0; } }
+@keyframes dk-spin   { to { rotate: 360deg; } }
+@keyframes dk-node   { from { opacity: 0; scale: 0; } to { opacity: 1; scale: 1; } }
+@keyframes dk-box    { from { opacity: 1; clip-path: inset(0 100% 100% 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@media (prefers-reduced-motion: reduce) { .dk-illus *, .dk-illus__rings circle { animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; } }
+@media print { .dk-illus *, .dk-illus__rings circle { animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; } }
+
+/* ==========================================================================
+   v3 · Fondos fotográficos con recuadros glass (s3, s4) + s5 en 3 estados
+   ========================================================================== */
+.dk-glass .dk-photo-bg { position: absolute; inset: 0; z-index: -1; background: center / cover no-repeat; opacity: .5; pointer-events: none; }
+.dk-glass .dk-scenarios .ap-card,
+.dk-glass .ap-kpi-card__box {
+  background: rgba(248, 250, 252, .34);
+  border: 1px solid rgba(255, 255, 255, .75);
+  box-shadow: 0 12px 40px rgba(29, 78, 216, .06), inset 0 1px 0 rgba(255, 255, 255, .6);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+/* ---------- s5 · Qué hacemos: palabra clave + imagen enmascarada ---------- */
+.dk-morph { position: absolute; left: 411px; top: 378px; margin: 0; z-index: 2;
+  font-family: var(--ap-font-sans); font-size: 64px; font-weight: 400; letter-spacing: -.01em; color: var(--ap-color-white); }
+.dk-ln { display: block; height: 114px; line-height: 114px; overflow: hidden; white-space: nowrap; }
+.dk-ln--in { padding-left: 91px; }
+.dk-ln__in { display: inline-block; }
+.dk-morph .is-lime { color: var(--ap-color-secondary); }
+.dk-ln--in .dk-ln__in { color: var(--ap-color-white); }
+
+.dk-u-wave, .dk-u-arrow { position: relative; display: inline-block; line-height: 1.2; }
+.dk-u-wave::after { content: ""; position: absolute; left: 0; right: -6px; bottom: -16px; height: 12px;
+  background: url("media/wave-lg.svg") left center / 100% 12px no-repeat; }
+.dk-u-arrow::after { content: ""; position: absolute; left: 2px; right: 6px; bottom: -14px; height: 1px; background: var(--ap-color-secondary); }
+.dk-u-arrow::before { content: ""; position: absolute; right: 6px; bottom: -18px; width: 8px; height: 8px;
+  border-top: 1px solid var(--ap-color-secondary); border-right: 1px solid var(--ap-color-secondary); transform: rotate(45deg); transform-origin: 50% 50%; }
+
+.dk-kw { position: relative; display: inline-block; vertical-align: middle; height: 86px; line-height: 86px; padding: 0 10px;
+  margin-top: -6px; background: rgba(0, 0, 0, .38); overflow: hidden; color: var(--ap-color-secondary); }
+.dk-kw__word { display: none; }
+.dk-kw__word.is-on { display: inline-block; }
+
+.dk-morph__mask { position: absolute; left: 980px; top: 120px; width: 400px; height: 372px; overflow: hidden; z-index: 1; }
+.dk-morph__img { position: absolute; left: 50%; display: none; transform: translateX(-50%); transform-origin: 50% 100%; }
+.dk-morph__img.is-on { display: block; }
+.dk-morph__img--faro    { top: 54px;  width: 232px; }
+.dk-morph__img--reloj   { top: 151px; width: 311px; }
+.dk-morph__img--piedras { top: 68px;  width: 281px; }
+
+/* Con animación: todo queda montado y lo gobiernan las clases que pone deck.js */
+.ap-animate .dk-kw__word { display: block; position: absolute; left: 10px; top: 0; transform: translateY(110%); }
+.ap-animate .dk-kw { transition: width .6s var(--ap-ease-out) .25s; }
+.ap-animate .dk-morph__img { display: block; transform: translateX(-50%) translateY(110%) rotate(14deg); }
+
+.ap-animate .is-playing .dk-ln__in { animation: dk-ln-in .9s var(--ap-ease-out) both; }
+.ap-animate .is-playing .dk-ln:nth-child(2) .dk-ln__in { animation-delay: .12s; }
+.ap-animate .is-playing .dk-ln:nth-child(3) .dk-ln__in { animation-delay: .24s; }
+.ap-animate .is-playing .dk-ln:nth-child(4) .dk-ln__in { animation-delay: .36s; }
+.ap-animate .is-playing .dk-u-wave::after { animation: dk-wipe 1.1s var(--ap-ease-out) .8s both; }
+.ap-animate .is-playing .dk-u-arrow::after { transform-origin: left center; animation: dk-grow .9s var(--ap-ease-out) .95s both; }
+.ap-animate .is-playing .dk-u-arrow::before { animation: dk-tip .3s var(--ap-ease-out) 1.6s both; }
+.ap-animate .is-playing .dk-kw { animation: dk-box .6s var(--ap-ease-out) .5s both; }
+
+.ap-animate .dk-kw__word.is-in   { animation: dk-ln-in .75s var(--ap-ease-out) .32s both; }
+.ap-animate .dk-kw__word.is-out  { animation: dk-ln-out .4s var(--ap-ease-in) both; }
+.ap-animate .dk-morph__img.is-in  { animation: dk-img-in 1.1s var(--ap-ease-out) .3s both; }
+.ap-animate .dk-morph__img.is-out { animation: dk-img-out .45s var(--ap-ease-in) both; }
+
+@keyframes dk-ln-in  { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes dk-ln-out { from { transform: translateY(0); } to { transform: translateY(-110%); } }
+@keyframes dk-wipe   { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes dk-grow   { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes dk-tip    { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dk-box    { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes dk-img-in {
+  from { transform: translateX(-50%) translateY(110%) rotate(14deg); }
+  to   { transform: translateX(-50%) translateY(0) rotate(0deg); }
+}
+@keyframes dk-img-out {
+  from { transform: translateX(-50%) translateY(0) rotate(0deg); opacity: 1; }
+  to   { transform: translateX(-50%) translateY(60%) rotate(-8deg); opacity: 0; }
+}
+@media print {
+  .dk-kw__word, .dk-morph__img { animation: none !important; }
+}
+.ap-animate .dk-kw__word.is-shown { transform: none; }
+.ap-animate .dk-morph__img.is-shown { transform: translateX(-50%); }
+
+/* s5 · barra de progreso de cada estado, bajo "Transformamos" */
+.dk-ln__in.is-lime:has(.dk-prog) { position: relative; }
+.dk-prog { position: absolute; left: 2px; right: 0; bottom: 20px; height: 2px; background: var(--ap-color-gray-700, #4A5058); overflow: hidden; }
+.dk-prog::after { content: ""; position: absolute; inset: 0; background: var(--ap-color-secondary); transform: scaleX(0); transform-origin: left center; }
+.ap-animate .dk-prog.is-run::after { animation: dk-grow var(--dk-hold, 3200ms) linear both; }
+
+/* ==========================================================================
+   v4 · s7 árboles sobre la línea de cada fase · s8 videos en loop en las cards
+   ========================================================================== */
+.dk-phases .dk-tree { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); pointer-events: none; }
+.dk-phases .dk-tree--1 { height: 108px; margin-bottom: 2px; }
+.dk-phases .dk-tree--2 { height: 170px; margin-bottom: 2px; }
+.dk-phases .dk-tree--3 { width: 100%; height: auto; margin-bottom: -12px; left: 50%; }
+
+.dk-services .ap-card { overflow: hidden; }
+.dk-services .dk-card-video { display: block; width: calc(100% + 80px); margin: -40px -40px 0; height: 250px; object-fit: cover; object-position: 50% 30%; background: var(--ap-color-gray-100); }
+.dk-services .dk-card-video + h3 { margin-top: 32px; }

@@ -1,0 +1,300 @@
+/* ==========================================================================
+   APPICUA · DESIGN TOKENS (CSS)
+   Fuente de verdad: Appicua Design/Tokens/*.tokens.json (Figma Variables)
+   Capas:  00 Primitives → 01 Typescale → 02 Color (light/dark) → 03 Layout → 04 Component
+   Uso:    <link rel="stylesheet" href="tokens/appicua-tokens.css">
+           Tema oscuro:  <section class="theme-dark"> o [data-theme="dark"]
+   Regla:  en componentes usa SIEMPRE tokens semánticos (--ap-surface-*, --ap-fg-*,
+           --ap-border-*, --ap-action-*). Los primitivos (--ap-color-*) solo para definir temas.
+   ========================================================================== */
+
+/* Fuentes locales (offline). Alternativa web: Google Fonts → Archivo 300–900, IBM Plex Mono 400/600/700, Lora 400/600 */
+@import url("../assets/fonts/fonts.css");
+
+:root {
+  /* ---------- 00 · PRIMITIVOS · Color ---------- */
+  --ap-color-white: #FFFFFF;
+  --ap-color-gray-50: #F8FAFA;
+  --ap-color-gray-100: #EFF2F5;
+  --ap-color-gray-200: #DFE5EC;
+  --ap-color-gray-300: #BBC3CA;
+  --ap-color-gray-400: #97A3AE;
+  --ap-color-gray-500: #747F8D;
+  --ap-color-gray-600: #616A76;
+  --ap-color-gray-700: #515861;
+  --ap-color-gray-800: #353A40;
+  --ap-color-gray-900: #2D3135;
+  --ap-color-gray-950: #212321;
+  --ap-color-black: #000000;
+  --ap-color-black-op40: rgb(0 0 0 / 0.4);
+
+  /* Brand · Primario (Azul Appicua) */
+  --ap-color-primary-lighter: #EFF6FF;
+  --ap-color-primary-light: #C0D9FD;
+  --ap-color-primary: #1E65EC;
+  --ap-color-primary-dark: #203DAD;
+  --ap-color-primary-darker: #182353;
+
+  /* Brand · Secundario (Lima Appicua) */
+  --ap-color-secondary-lighter: #FCFFE5;
+  --ap-color-secondary-light: #ECFF96;
+  --ap-color-secondary: #DFFD68;
+  --ap-color-secondary-dark: #AADA08;
+  --ap-color-secondary-darker: #42580F;
+
+  /* Status */
+  --ap-color-success-lighter: #F0FDF4; --ap-color-success-light: #BBF7D0; --ap-color-success: #15803D; --ap-color-success-dark: #14532D; --ap-color-success-darker: #052E14;
+  --ap-color-warning-lighter: #FFFBEB; --ap-color-warning-light: #FEF3C7; --ap-color-warning: #B45309; --ap-color-warning-dark: #92400E; --ap-color-warning-darker: #78350F;
+  --ap-color-error-lighter:   #FFF1F2; --ap-color-error-light:   #FECDD3; --ap-color-error:   #E11D48; --ap-color-error-dark:   #BE123C; --ap-color-error-darker:   #9F1239;
+  --ap-color-info-lighter:    #F0F9FF; --ap-color-info-light:    #BAE6FD; --ap-color-info:    #0369A1; --ap-color-info-dark:    #075985; --ap-color-info-darker:    #0C4A6E;
+  --ap-color-visited: #7B2CBF;
+
+  /* ---------- 00 · PRIMITIVOS · Tipografía ---------- */
+  --ap-font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ap-font-serif: "Lora", Georgia, serif;
+  --ap-font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ap-weight-light: 300;
+  --ap-weight-regular: 400;
+  --ap-weight-medium: 500;
+  --ap-weight-semibold: 600;
+  --ap-weight-bold: 700;
+  --ap-weight-black: 900;
+
+  --ap-lh-none: 1;
+  --ap-lh-snug: 1.1;
+  --ap-lh-tight: 1.2;
+  --ap-lh-base: 1.5;
+  --ap-lh-loose: 2;
+
+  /* ---------- 01 · TYPESCALE (Desktop / slides 1920×1080) ---------- */
+  --ap-f-xs: 12px;
+  --ap-f-sm: 14px;
+  --ap-f-base: 16px;
+  --ap-f-lg: 20px;
+  --ap-f-xl: 24px;
+  --ap-f-2xl: 32px;
+  --ap-f-3xl: 40px;
+  --ap-f-4xl: 48px;
+  --ap-f-5xl: 56px;
+  --ap-f-6xl: 64px;
+  --ap-f-7xl: 72px;
+  --ap-f-8xl: 80px;
+  --ap-f-9xl: 96px;
+  --ap-f-10xl: 112px;
+
+  --ap-tracking-tight: -0.01em;
+  --ap-tracking-normal: 0;
+  --ap-tracking-wide: 0.06em;   /* eyebrows, botones */
+  --ap-tracking-wider: 0.1em;   /* labels mono, KPI */
+
+  /* ---------- 00/03 · Espaciado, radios, bordes ---------- */
+  --ap-space-0: 0;    --ap-space-2: 2px;  --ap-space-4: 4px;  --ap-space-6: 6px;
+  --ap-space-8: 8px;  --ap-space-12: 12px; --ap-space-16: 16px; --ap-space-20: 20px;
+  --ap-space-24: 24px; --ap-space-28: 28px; --ap-space-32: 32px; --ap-space-36: 36px;
+  --ap-space-40: 40px; --ap-space-48: 48px; --ap-space-56: 56px; --ap-space-64: 64px;
+  --ap-space-72: 72px; --ap-space-80: 80px; --ap-space-96: 96px;
+
+  /* Semánticos de layout (03 Layout) */
+  --ap-page-margin: 48px;
+  --ap-gutter: 24px;
+  --ap-section-gap: 80px;
+  --ap-gap-xxs: 4px; --ap-gap-xs: 6px; --ap-gap-sm: 8px; --ap-gap-md: 12px; --ap-gap-lg: 16px;
+  --ap-gap-xl: 20px; --ap-gap-2xl: 24px; --ap-gap-3xl: 32px; --ap-gap-4xl: 40px;
+
+  --ap-radius-0: 0;
+  --ap-radius-component-sm: 4px;   /* inputs, badges rect, botones de navegación */
+  --ap-radius-component-md: 8px;   /* botones, cards pequeñas */
+  --ap-radius-component-lg: 12px;
+  --ap-radius-component-xl: 16px;
+  --ap-radius-container-sm: 8px;
+  --ap-radius-container-md: 16px;
+  --ap-radius-container-lg: 32px;  /* contenedores de imagen grandes */
+  --ap-radius-pill: 9999px;
+
+  --ap-border-thin: 1px;
+  --ap-border-medium: 1.5px;
+  --ap-border-thick: 2px;
+
+  /* Opacidades */
+  --ap-opacity-subtle: 0.05;
+  --ap-opacity-scrim: 0.6;
+  --ap-opacity-disabled: 0.8;
+  --ap-opacity-overlay: 0.9;
+
+  /* Sombras (derivadas de las referencias: cards elevadas sobre gris) */
+  --ap-shadow-sm: 0 1px 2px rgb(33 35 33 / 0.08), 0 2px 6px rgb(33 35 33 / 0.06);
+  --ap-shadow-md: 0 4px 12px rgb(33 35 33 / 0.12), 0 1px 3px rgb(33 35 33 / 0.08);
+  --ap-shadow-lg: 0 12px 32px rgb(24 35 83 / 0.18);
+
+  /* 04 · Component */
+  --ap-size-2xs: 16px; --ap-size-xs: 24px; --ap-size-sm: 32px; --ap-size-md: 48px; --ap-size-lg: 64px;
+  --ap-size-xl: 80px; --ap-size-2xl: 96px; --ap-size-3xl: 128px; --ap-size-4xl: 160px; --ap-size-5xl: 208px; --ap-size-6xl: 256px;
+  --ap-icon-xs: 16px; --ap-icon-sm: 20px; --ap-icon-md: 24px; --ap-icon-lg: 32px; --ap-icon-xl: 48px;
+
+  --ap-button-height-sm: 32px;
+  --ap-button-height: 48px;
+  --ap-button-height-lg: 56px;
+  --ap-button-px-sm: 8px;
+  --ap-button-px: 16px;
+  --ap-button-px-lg: 20px;
+  --ap-button-min-width: 72px;
+  --ap-button-radius: var(--ap-radius-component-md);
+
+  --ap-input-height: 48px;
+  --ap-input-radius: var(--ap-radius-component-sm);
+  --ap-badge-h-sm: 24px; --ap-badge-h-md: 28px; --ap-badge-h-lg: 36px;
+
+  --ap-container-xs: 320px; --ap-container-sm: 420px; --ap-container-md: 560px; --ap-container-lg: 720px;
+  --ap-container-xl: 900px; --ap-container-2xl: 1200px; --ap-container-3xl: 1440px; --ap-container-4xl: 1600px;
+
+  /* ---------- MOVIMIENTO (medido sobre los referentes de /Reference/Motion) ----------
+     Principio: cámara que se aleja, se desplaza y vuelve a acercarse (glide);
+     el contenido entra por foco (desenfoque → nítido) y por palabras. Sin rebotes ni giros. */
+  --ap-ease-out: cubic-bezier(.16, 1, .3, 1);        /* entradas: arranque rápido, frenado largo (expo out) */
+  --ap-ease-in-out: cubic-bezier(.65, 0, .35, 1);    /* zoom de cámara */
+  --ap-ease-glide: cubic-bezier(.6, 0, .15, 1);      /* paneo entre slides: pico de velocidad al 38%, cola larga */
+  --ap-ease-in: cubic-bezier(.5, 0, .75, 0);         /* salidas rápidas (pérdida de foco) */
+  --ap-dur-xs: 160ms;   /* hover, foco */
+  --ap-dur-sm: 320ms;   /* desenfoque de salida, chrome */
+  --ap-dur-md: 640ms;   /* entrada de bloques */
+  --ap-dur-lg: 900ms;   /* palabras de titulares, revelado de imágenes, reglas */
+  --ap-dur-slide: 1100ms; /* transición completa entre slides (zoom-out 30% · paneo 45% · zoom-in 25%) */
+  --ap-stagger: 70ms;   /* entre bloques */
+  --ap-stagger-word: 45ms; /* entre palabras de un titular */
+  --ap-blur-in: 12px;   /* desenfoque inicial de los elementos que entran */
+  --ap-rise: 28px;      /* desplazamiento vertical de entrada */
+  --ap-zoom-out: .88;   /* escala del panel durante el paneo */
+  --ap-pan-gap: 64px;   /* separación entre paneles durante el paneo */
+
+  /* ---------- SLIDE (lienzo 16:9) ---------- */
+  --ap-slide-w: 1920px;
+  --ap-slide-h: 1080px;
+  --ap-slide-margin-x: 112px;     /* margen lateral de contenido (referencias) */
+  --ap-slide-margin-top: 40px;
+  --ap-slide-margin-bottom: 40px;
+  --ap-slide-cols: 12;
+  --ap-slide-gutter: 24px;
+  --ap-slide-rail: 160px;         /* variante con riel lateral de navegación */
+  --ap-slide-panel: 375px;        /* panel lateral (Índice) */
+
+  /* Fondo de puntos (Bg Dots.png): punto 3px #363836 cada 45px sobre gray-950 */
+  --ap-dots-color: rgb(255 255 255 / 0.09);
+  --ap-dots-size: 45px;
+
+  /* ======= 02 · COLOR SEMÁNTICO · LIGHT (por defecto) ======= */
+  --ap-surface-canvas: var(--ap-color-white);
+  --ap-surface-subtle: var(--ap-color-gray-100);
+  --ap-surface-card: var(--ap-color-white);
+  --ap-surface-sunken: var(--ap-color-gray-200);
+  --ap-surface-sunken-dark: var(--ap-color-gray-400);
+  --ap-surface-modal: var(--ap-color-white);
+  --ap-surface-inverse: var(--ap-color-gray-950);
+  --ap-surface-always-dark: var(--ap-color-gray-950);
+  --ap-surface-always-light: var(--ap-color-white);
+  --ap-surface-highlight-dark: var(--ap-color-black-op40);
+  --ap-surface-primary-solid: var(--ap-color-primary);
+  --ap-surface-primary-soft: var(--ap-color-primary-light);
+  --ap-surface-primary-subtle: var(--ap-color-primary-lighter);
+  --ap-surface-secondary-solid: var(--ap-color-secondary);
+  --ap-surface-secondary-soft: var(--ap-color-secondary-light);
+  --ap-surface-secondary-subtle: var(--ap-color-secondary-lighter);
+  --ap-surface-overlay: var(--ap-color-primary-darker);
+
+  --ap-fg-primary: var(--ap-color-gray-950);
+  --ap-fg-secondary: var(--ap-color-gray-700);
+  --ap-fg-placeholder: var(--ap-color-gray-600);
+  --ap-fg-disabled: var(--ap-color-gray-700);
+  --ap-fg-inverse: var(--ap-color-white);
+  --ap-fg-brand: var(--ap-color-primary);
+  --ap-fg-brand-strong: var(--ap-color-primary-darker);
+  --ap-fg-accent: var(--ap-color-secondary);              /* lima: SOLO sobre fondos oscuros */
+  --ap-fg-accent-strong: var(--ap-color-secondary-darker);
+  --ap-fg-on-primary: var(--ap-color-white);
+  --ap-fg-on-secondary: var(--ap-color-gray-950);
+  --ap-fg-on-inverse: var(--ap-color-white);
+  --ap-fg-on-status: var(--ap-color-white);
+  --ap-fg-error: var(--ap-color-error);   --ap-fg-error-strong: var(--ap-color-error-darker);
+  --ap-fg-warning: var(--ap-color-warning); --ap-fg-warning-strong: var(--ap-color-warning-darker);
+  --ap-fg-success: var(--ap-color-success); --ap-fg-success-strong: var(--ap-color-success-darker);
+  --ap-fg-info: var(--ap-color-info);     --ap-fg-info-strong: var(--ap-color-info-darker);
+  --ap-fg-visited: var(--ap-color-visited);
+
+  --ap-border-transparent: var(--ap-color-white);
+  --ap-border-subtle: var(--ap-color-gray-300);
+  --ap-border-default: var(--ap-color-gray-500);
+  --ap-border-strong: var(--ap-color-gray-700);
+  --ap-border-primary-subtle: var(--ap-color-primary-light);
+  --ap-border-primary: var(--ap-color-primary);
+  --ap-border-secondary-subtle: var(--ap-color-secondary-light);
+  --ap-border-secondary: var(--ap-color-secondary);
+
+  /* Acciones */
+  --ap-action-primary-bg: var(--ap-color-primary);
+  --ap-action-primary-bg-hover: var(--ap-color-primary-dark);
+  --ap-action-primary-bg-pressed: var(--ap-color-primary-darker);
+  --ap-action-primary-fg: var(--ap-color-white);
+  --ap-action-primary-subtle-bg: var(--ap-color-primary-lighter);
+  --ap-action-primary-subtle-bg-hover: var(--ap-color-primary-light);
+  --ap-action-primary-subtle-fg: var(--ap-color-primary);
+  --ap-action-primary-focus: var(--ap-color-primary);
+
+  --ap-action-secondary-bg: var(--ap-color-secondary);
+  --ap-action-secondary-bg-hover: var(--ap-color-secondary-dark);
+  --ap-action-secondary-bg-pressed: var(--ap-color-secondary-darker);
+  --ap-action-secondary-fg: var(--ap-color-gray-950);
+  --ap-action-secondary-focus: var(--ap-color-secondary-dark);
+
+  --ap-action-neutral-bg: var(--ap-color-gray-500);
+  --ap-action-neutral-bg-hover: var(--ap-color-gray-700);
+  --ap-action-neutral-bg-pressed: var(--ap-color-gray-900);
+  --ap-action-neutral-fg: var(--ap-color-white);
+  --ap-action-neutral-subtle-bg: var(--ap-color-gray-100);
+  --ap-action-neutral-subtle-bg-hover: var(--ap-color-gray-200);
+  --ap-action-neutral-subtle-fg: var(--ap-color-gray-950);
+
+  /* Roles específicos de slides (no están en Figma; derivados de las referencias) */
+  --ap-slide-bg: var(--ap-surface-canvas);
+  --ap-slide-title: var(--ap-fg-brand);           /* títulos en azul sobre claro */
+  --ap-slide-highlight: var(--ap-fg-brand);        /* palabra destacada */
+  --ap-slide-rule: var(--ap-color-gray-300);       /* líneas divisorias */
+  --ap-slide-diamond: var(--ap-color-gray-500);
+  --ap-slide-muted: var(--ap-color-gray-600);      /* eyebrow, breadcrumb inactivo */
+  --ap-slide-chip-bg: var(--ap-color-gray-100);    /* contador 07/19 */
+  --ap-slide-row-bg: var(--ap-color-gray-200);     /* filas del índice */
+  --ap-slide-watermark: var(--ap-color-gray-100);
+}
+
+/* ======= 02 · COLOR SEMÁNTICO · DARK ======= */
+.theme-dark,
+[data-theme="dark"] {
+  --ap-surface-canvas: var(--ap-color-gray-950);
+  --ap-surface-subtle: var(--ap-color-gray-800);
+  --ap-surface-card: var(--ap-color-gray-950);
+  --ap-surface-sunken: var(--ap-color-gray-700);
+  --ap-surface-sunken-dark: var(--ap-color-gray-500);
+  --ap-surface-modal: var(--ap-color-gray-950);
+  --ap-surface-inverse: var(--ap-color-white);
+
+  --ap-fg-primary: var(--ap-color-white);
+  --ap-fg-secondary: var(--ap-color-gray-300);
+  --ap-fg-placeholder: var(--ap-color-gray-400);
+  --ap-fg-disabled: var(--ap-color-gray-300);
+  --ap-fg-inverse: var(--ap-color-gray-950);
+  --ap-fg-on-inverse: var(--ap-color-gray-950);
+
+  --ap-border-transparent: var(--ap-color-gray-950);
+  --ap-border-subtle: var(--ap-color-gray-700);
+  --ap-border-default: var(--ap-color-gray-500);
+  --ap-border-strong: var(--ap-color-gray-300);
+
+  --ap-slide-bg: var(--ap-surface-canvas);
+  --ap-slide-title: var(--ap-color-white);
+  --ap-slide-highlight: var(--ap-color-secondary);   /* lima sobre oscuro */
+  --ap-slide-rule: var(--ap-color-gray-700);
+  --ap-slide-diamond: var(--ap-color-gray-400);
+  --ap-slide-muted: var(--ap-color-gray-400);
+  --ap-slide-chip-bg: var(--ap-color-gray-800);
+  --ap-slide-row-bg: var(--ap-color-gray-800);
+  --ap-slide-watermark: var(--ap-color-gray-800);
+}
