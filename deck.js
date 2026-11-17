@@ -136,3 +136,31 @@
     }).observe(slide, { attributes: true, attributeFilter: ['class'] });
   });
 })();
+
+/* ==========================================================================
+   s8 · flip cards (.dk-flip): clic / Enter / Espacio giran la tarjeta.
+   Al salir de la slide vuelven al frente.
+   ========================================================================== */
+(() => {
+  const set = (c, on) => {
+    c.classList.toggle('is-flipped', on);
+    c.setAttribute('aria-pressed', String(on));
+    c.querySelector('.dk-flip__back').setAttribute('aria-hidden', String(!on));
+    c.querySelector('.dk-flip__front').setAttribute('aria-hidden', String(on));
+  };
+  document.querySelectorAll('.dk-flip').forEach(c => {
+    c.addEventListener('click', () => set(c, !c.classList.contains('is-flipped')));
+    c.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault(); e.stopPropagation();          // que Espacio no avance la slide
+      set(c, !c.classList.contains('is-flipped'));
+    });
+  });
+  document.querySelectorAll('.ap-slide').forEach(slide => {
+    const own = slide.querySelectorAll('.dk-flip');
+    if (!own.length) return;
+    new MutationObserver(() => {
+      if (!slide.classList.contains('is-active')) own.forEach(c => set(c, false));
+    }).observe(slide, { attributes: true, attributeFilter: ['class'] });
+  });
+})();

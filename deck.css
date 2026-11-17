@@ -280,3 +280,60 @@
 .dk-services .ap-card { overflow: hidden; }
 .dk-services .dk-card-video { display: block; width: calc(100% + 80px); margin: -40px -40px 0; height: 250px; object-fit: cover; object-position: 50% 30%; background: var(--ap-color-gray-100); }
 .dk-services .dk-card-video + h3 { margin-top: 32px; }
+
+/* ==========================================================================
+   v5 · s8 servicios con texto largo: video más bajo, subtítulo + párrafo
+   ========================================================================== */
+.dk-services--long .ap-card { position: relative; padding: 32px 36px; }
+.dk-services--long .dk-card-video { width: calc(100% + 72px); margin: -32px -36px 0; height: 210px; }
+.dk-services--long h3 { margin: 24px 0 8px; font-size: 28px; white-space: nowrap; }
+.dk-svc-n { position: absolute; top: 16px; left: 16px; z-index: 1; padding: 6px 10px; border-radius: var(--ap-radius-component-sm, 4px);
+  font: 600 var(--ap-f-base)/1 var(--ap-font-mono); color: var(--ap-fg-brand); background: var(--ap-color-white); }
+.dk-services--long .dk-svc-lead { margin: 0; font-size: var(--ap-f-lg); font-weight: var(--ap-weight-medium); line-height: 1.35; color: var(--ap-fg-brand); }
+.dk-services--long .dk-svc-body { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--ap-slide-rule); font-size: 17px; line-height: 1.5; color: var(--ap-fg-secondary); }
+
+/* ==========================================================================
+   v6 · s8 flip cards: frente (media + título + subtítulo) / reverso (descripción)
+   ========================================================================== */
+.dk-flip-hint { margin-top: 44px; text-align: center; font-size: var(--ap-f-base); color: var(--ap-fg-secondary); }
+.dk-flips { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ap-slide-gutter); margin-top: 24px; height: 500px; }
+.dk-flip.ap-card { padding: 0; border: 0; background: none; box-shadow: none; cursor: pointer; perspective: 1800px; outline: none; }
+.dk-flip__inner { position: relative; height: 100%; transform-style: preserve-3d; transition: transform .8s var(--ap-ease-out); }
+.dk-flip.is-flipped .dk-flip__inner { transform: rotateY(180deg); }
+.dk-flip__face { position: absolute; inset: 0; overflow: hidden; border-radius: var(--ap-radius-container-lg, 16px);
+  -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.dk-flip:focus-visible .dk-flip__face { box-shadow: 0 0 0 3px var(--ap-color-primary); }
+
+.dk-flip__front { display: flex; flex-direction: column; background: var(--ap-color-white); border: 1px solid var(--ap-color-gray-200); }
+.dk-flip__media { position: relative; height: 330px; flex: none; background: var(--ap-color-gray-100); }
+.dk-flip__media.is-dark { background: var(--ap-color-gray-950); }
+.dk-flip__media > img, .dk-flip__media > video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dk-flip__n { position: absolute; top: 18px; left: 18px; z-index: 1; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  font: 600 var(--ap-f-lg)/1 var(--ap-font-mono); color: var(--ap-color-secondary); background: var(--ap-color-gray-950); }
+.dk-flip__text { padding: 30px 30px 28px; }
+.dk-flip__text h3, .dk-flip__back h3 { margin: 0; font: var(--ap-weight-bold) 28px/1.2 var(--ap-font-sans); color: var(--ap-fg-primary); }
+.dk-flip__text p { margin: 12px 0 0; font-size: var(--ap-f-lg); line-height: 1.4; color: var(--ap-fg-brand); }
+.dk-flip:hover .dk-flip__front { border-color: var(--ap-color-primary); }
+
+.dk-flip__back { display: flex; flex-direction: column; padding: 96px 36px 30px; transform: rotateY(180deg); background: var(--ap-color-gray-950); color: var(--ap-color-white); }
+.dk-flip__back h3 { color: var(--ap-color-secondary); }
+.dk-flip__back p { margin: 18px 0 0; font-size: 18px; line-height: 1.55; color: var(--ap-color-gray-200); }
+.dk-flip__back .dk-flip__n { top: 24px; left: 36px; width: auto; height: auto; background: none; font-size: var(--ap-f-lg); }
+.dk-flip__hint { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; font: 600 var(--ap-f-base)/1 var(--ap-font-mono);
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ap-color-gray-300); }
+.dk-flip__hint svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (prefers-reduced-motion: reduce) { .dk-flip__inner { transition: none; } }
+
+/* v7 · s11 mockup a sangre por la derecha (el iMac es horizontal y no cabe en una columna vertical) */
+.dk-media-bleed { margin-right: calc(-1 * var(--ap-slide-margin-x, 112px)); border-radius: var(--ap-radius-container-lg) 0 0 var(--ap-radius-container-lg); }
+
+/* v8 · s12 fondo de brumas (ya es suave: va a opacidad completa) + oferta en vidrio */
+.dk-glass .dk-photo-bg--full { opacity: 1; }
+.dk-glass .dk-offer:not(.dk-offer--dark) {
+  background: rgba(248, 250, 252, .38);
+  border: 1px solid rgba(255, 255, 255, .8);
+  box-shadow: 0 12px 40px rgba(29, 78, 216, .06), inset 0 1px 0 rgba(255, 255, 255, .6);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+.dk-glass .dk-offer--dark { background: rgba(33, 35, 33, .92); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); }

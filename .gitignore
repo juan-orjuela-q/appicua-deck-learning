@@ -7,3 +7,5 @@ media/videos/*.mp4
 media/wave.svg
 .DS_Store
 Thumbs.db
+media/*.jpg
+!media/video-appicua-intro-poster.jpg
